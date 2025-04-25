@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote for Your Favorite Pet!</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <h1>Vote for Your Favorite Pet!</h1>
+
+    <div class="container">
+        <form method="POST" action="/vote">
+            <div class="vote-buttons">
+                <button type="submit" name="animal" value="dog">Vote Dog</button>
+                <button type="submit" name="animal" value="cat">Vote Cat</button>
+            </div>
+        </form>
+
+        <div class="results">
+            <h2>Results:</h2>
+            <p class="result-text">Dogs: <span id="dogCount">{{ results["dog"] }}</span></p>
+            <p class="result-text">Cats: <span id="catCount">{{ results["cat"] }}</span></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Pet Voting App</p>
+    </footer>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
